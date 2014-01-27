@@ -36,17 +36,17 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class role_oradb::installdb (
-  version                = '11.2.0.1',
-  file                   = 'linux.x64_11gR2_database',
-  databaseType           = 'SE',
-  oracleBase             = '/oracle',
-  oracleHome             = '/oracle/product/11.2/db',
-  createUser             = 'true',
-  user                   = 'oracle',
-  userBaseDir            = '/localhome',
-  group                  = 'dba',
-  downloadDir            = '/install',
-  zipExtract             = true,
+  $version                = '11.2.0.1',
+  $file                   = 'linux.x64_11gR2_database',
+  $databaseType           = 'SE',
+  $oracleBase             = '/oracle',
+  $oracleHome             = '/oracle/product/11.2/db',
+  $createUser             = 'true',
+  $user                   = 'oracle',
+  $userBaseDir            = '/localhome',
+  $group                  = 'dba',
+  $downloadDir            = '/install',
+  $zipExtract             = true,
 ){
     oradb::installdb{ '112010_Linux-x86-64':
             version      => $version,
