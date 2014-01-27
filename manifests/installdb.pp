@@ -47,18 +47,25 @@ class role_oradb::installdb (
   $group                  = 'dba',
   $downloadDir            = '/install',
   $zipExtract             = true,
+  $puppetDownloadMntPoint = '/zipfiles',
+  $remoteFile             = true,
+
+
 ){
     oradb::installdb{ '112010_Linux-x86-64':
-            version      => $version,
-            file         => $file,
-            databaseType => $databaseType,
-            oracleBase   => $oracleBase,
-            oracleHome   => $oracleHome,
-            createUser   => $createUser,
-            user         => $user,
-            userBaseDir  => $userBaseDir,
-            group        => $group,
-            downloadDir  => $downloadDir,
-            zipExtract   => $zipExtract,
+            version                => $version,
+            file                   => $file,
+            databaseType           => $databaseType,
+            oracleBase             => $oracleBase,
+            oracleHome             => $oracleHome,
+            createUser             => $createUser,
+            user                   => $user,
+            userBaseDir            => $userBaseDir,
+            group                  => $group,
+            downloadDir            => $downloadDir,
+            zipExtract             => $zipExtract,
+	    puppetDownloadMntPoint => $puppetDownloadMntPoint,
+	    remoteFile             => $remoteFile,
+
     }
 }
