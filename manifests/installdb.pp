@@ -43,7 +43,7 @@ class role_oradb::installdb (
   $oracleHome             = '/oracle/product/11.2/db',
   $createUser             = 'true',
   $user                   = 'oracle',
-  $userBaseDir            = '/localhome',
+  $userBaseDir            = '/home',
   $group                  = 'dba',
   $downloadDir            = '/install',
   $zipExtract             = true,
