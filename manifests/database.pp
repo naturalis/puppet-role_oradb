@@ -78,4 +78,5 @@ rold_oradb::database{ 'testDb':
                    memoryTotal             => $memoryTotal,
                    databaseType            => $databaseType,
                    require                 => $require,
+    }
 }
