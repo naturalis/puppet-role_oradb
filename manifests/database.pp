@@ -55,8 +55,8 @@ class role_oradb::database (
             $memoryTotal             = "800",
             $databaseType            = "MULTIPURPOSE",
 #            $require                 = "Oradb::Listener['start listener']",
-){
 
+){
    oradb::database{ 'testDb':
                    oracleBase              => $oracleBase,
                    oracleHome              => $oracleHome,
@@ -77,6 +77,6 @@ class role_oradb::database (
                    memoryPercentage        => $memoryPercentage,
                    memoryTotal             => $memoryTotal,
                    databaseType            => $databaseType,
-#                   require                 => Class[$require],
+#                  require                 => Class[$require],
     }
 }
