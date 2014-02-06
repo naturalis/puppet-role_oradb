@@ -41,7 +41,7 @@ class role_oradb::database (
             $group                   = 'dba',
             $downloadDir             = '/install',
             $action                  = 'create',
-            $dbName                  = 'test',
+            $dbName                  = 'orcl',
             $dbDomain                = 'oracle.com',
             $sysPassword             = 'Welcome01',
             $systemPassword          = 'Welcome01',
