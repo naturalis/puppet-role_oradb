@@ -43,7 +43,7 @@ class role_oradb::net (
           $downloadDir  = '/install',
 
 ){
-   oradb::net{ 'net':
+   oradb::net{ 'orcl':
           oracleHome   => $oracleHome,
           version      => $version,
           user         => $user,
