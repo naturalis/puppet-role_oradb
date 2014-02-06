@@ -57,7 +57,7 @@ class role_oradb::database (
 #            $require                 = "Oradb::Listener['start listener']",
 ){
 
-oradb::database{ 'testDb':
+   oradb::database{ 'testDb':
                    oracleBase              => $oracleBase,
                    oracleHome              => $oracleHome,
                    user                    => $user,
