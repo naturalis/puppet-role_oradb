@@ -36,14 +36,25 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class role_oradb::net (
-          $oracleHome   = undef,
-          $version      = "11.2",
-          $user         = 'oracle',
-          $group        = 'dba',
-          $downloadDir  = '/install',
-
+  $oracleHome   = undef,
+  $version      = "11.2",
+  $user         = 'oracle',
+  $group        = 'dba',
+  $downloadDir  = '/install',
 ){
-   oradb::net{ 'orcl':
+  host { 'localhost':
+    ensure       => 'present',
+    host_aliases => ['localhost.localdomain', 'localhost4', 'localhost4.localdomain4'],
+    ip           => '127.0.0.1',
+    target       => '/etc/hosts',
+  }
+  host { '$fqdn':
+    ensure       => 'present',
+    host_aliases => [$hostname],
+    ip           => $ipaddress,
+    target       => '/etc/hosts',
+  }
+  oradb::net{ 'orcl':
           oracleHome   => $oracleHome,
           version      => $version,
           user         => $user,
