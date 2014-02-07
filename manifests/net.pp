@@ -48,7 +48,7 @@ class role_oradb::net (
     ip           => '127.0.0.1',
     target       => '/etc/hosts',
   }
-  host { '$fqdn':
+  host { $fqdn:
     ensure       => 'present',
     host_aliases => [$hostname],
     ip           => $ipaddress,
