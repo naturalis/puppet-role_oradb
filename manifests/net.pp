@@ -36,7 +36,7 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class role_oradb::net (
-  $oracleHome   = undef,
+  $oracleHome   = '/oracle/product/11.2/db',
   $version      = "11.2",
   $user         = 'oracle',
   $group        = 'dba',
