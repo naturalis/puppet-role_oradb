@@ -42,24 +42,18 @@ class role_oradb::net (
   $group        = 'dba',
   $downloadDir  = '/install',
 ){
-  host { 'localhost':
+  host { $::fqdn:
     ensure       => 'present',
-    host_aliases => ['localhost.localdomain', 'localhost4', 'localhost4.localdomain4'],
-    ip           => '127.0.0.1',
-    target       => '/etc/hosts',
-  }
-  host { $fqdn:
-    ensure       => 'present',
-    host_aliases => [$hostname],
-    ip           => $ipaddress,
+    host_aliases => [$::hostname],
+    ip           => $::ipaddress,
     target       => '/etc/hosts',
   }
   oradb::net{ 'orcl':
-          oracleHome   => $oracleHome,
-          version      => $version,
-          user         => $user,
-          group        => $group,
-          downloadDir  => $downloadDir,
-
-    }
+    oracleHome  => $oracleHome,
+    version     => $version,
+    user        => $user,
+    group       => $group,
+    downloadDir => $downloadDir,
+    require     => Host[$::fqdn],
+  }
 }
