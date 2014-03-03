@@ -57,7 +57,7 @@ class role_oradb (
                                      group        => 'dba',
                                      downloadDir  => '/install',
                                     },
-                     },
+                    },
   $database_hash  = {'orcl' => { oracleBase              => '/oracle',
                                  oracleHome              => '/oracle/product/11.2/db',
                                  user                    => 'oracle',
