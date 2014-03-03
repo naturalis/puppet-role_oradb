@@ -79,7 +79,7 @@ class role_oradb (
                                  databaseType            => "MULTIPURPOSE",
                                 },
                      },
-){
+) {
 
   host { $::fqdn:
     ensure       => 'present',
