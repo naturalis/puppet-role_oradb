@@ -11,10 +11,10 @@ All parameters are read from hiera
 
 Classes
 -------------
-role_oradb
-role_oradb::installdb
-role_oradb::net
-role_oradb::database
+- role_oradb
+- role_oradb::installdb
+- role_oradb::net
+- role_oradb::database
 
 Dependencies
 -------------
