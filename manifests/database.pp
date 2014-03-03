@@ -1,4 +1,4 @@
-## == Class: role_oradb:database.pp
+# == Class: role_oradb
 #
 # Full description of class role_oradb here.
 #
@@ -23,8 +23,9 @@
 #
 # === Examples
 #
-# action        =  createDatabase|deleteDatabase
-# databaseType  = MULTIPURPOSE|DATA_WAREHOUSING|OLTP
+#  class { role_oradb:
+#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
+#  }
 #
 # === Authors
 #
@@ -34,47 +35,8 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class role_oradb::database (
-            $oracleBase              = '/oracle',
-            $oracleHome              = '/oracle/product/11.2/db',
-            $user                    = 'oracle',
-            $group                   = 'dba',
-            $downloadDir             = '/install',
-            $action                  = 'create',
-            $dbName                  = 'orcl',
-            $dbDomain                = 'oracle.com',
-            $sysPassword             = 'Welcome01',
-            $systemPassword          = 'Welcome01',
-            $dataFileDestination     = "/oracle/oradata",
-            $recoveryAreaDestination = "/oracle/flash_recovery_area",
-            $characterSet            = "AL32UTF8",
-            $nationalCharacterSet    = "UTF8",
-            $initParams              = "open_cursors=1000,processes=600,job_queue_processes=4,compatible=11.2.0.0.0",
-            $sampleSchema            = 'TRUE',
-            $memoryPercentage        = "40",
-            $memoryTotal             = "800",
-            $databaseType            = "MULTIPURPOSE",
- 
-){
-   oradb::database{ 'testDb':
-                   oracleBase              => $oracleBase,
-                   oracleHome              => $oracleHome,
-                   user                    => $user,
-                   group                   => $group,
-                   downloadDir             => $downloadDir,
-                   action                  => $action,
-                   dbName                  => $dbName,
-                   dbDomain                => $dbDomain,
-                   sysPassword             => $sysPassword,
-                   systemPassword          => $systemPassword,
-                   dataFileDestination     => $dataFileDestination,
-                   recoveryAreaDestination => $recoveryAreaDestination,
-                   characterSet            => $characterSet,
-                   nationalCharacterSet    => $nationalCharacterSet,
-                   initParams              => $initParams,
-                   sampleSchema            => $sampleSchema,
-                   memoryPercentage        => $memoryPercentage,
-                   memoryTotal             => $memoryTotal,
-                   databaseType            => $databaseType,
-    }
-}
+class role_oradb::database(
+  $database_hash,
+  ){
+    create_resources('oradb::database', $database_hash)
+  }

@@ -35,25 +35,8 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class role_oradb::net (
-  $oracleHome   = '/oracle/product/11.2/db',
-  $version      = "11.2",
-  $user         = 'oracle',
-  $group        = 'dba',
-  $downloadDir  = '/install',
-){
-  host { $::fqdn:
-    ensure       => 'present',
-    host_aliases => [$::hostname],
-    ip           => $::ipaddress,
-    target       => '/etc/hosts',
+class role_oradb::net(
+  $net_hash,
+  ){
+    create_resources('oradb::net', $net_hash)
   }
-  oradb::net{ 'orcl':
-    oracleHome  => $oracleHome,
-    version     => $version,
-    user        => $user,
-    group       => $group,
-    downloadDir => $downloadDir,
-    require     => Host[$::fqdn],
-  }
-}

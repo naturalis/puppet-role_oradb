@@ -35,37 +35,8 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class role_oradb::installdb (
-  $version                = '11.2.0.1',
-  $file                   = 'linux.x64_11gR2_database',
-  $databaseType           = 'SE',
-  $oracleBase             = '/oracle',
-  $oracleHome             = '/oracle/product/11.2/db',
-  $createUser             = 'true',
-  $user                   = 'oracle',
-  $userBaseDir            = '/home',
-  $group                  = 'dba',
-  $downloadDir            = '/install',
-  $zipExtract             = true,
-  $puppetDownloadMntPoint = '/zipfiles',
-  $remoteFile             = true,
-
-
-){
-    oradb::installdb{ '112010_Linux-x86-64':
-            version                => $version,
-            file                   => $file,
-            databaseType           => $databaseType,
-            oracleBase             => $oracleBase,
-            oracleHome             => $oracleHome,
-            createUser             => $createUser,
-            user                   => $user,
-            userBaseDir            => $userBaseDir,
-            group                  => $group,
-            downloadDir            => $downloadDir,
-            zipExtract             => $zipExtract,
-	    puppetDownloadMntPoint => $puppetDownloadMntPoint,
-	    remoteFile             => $remoteFile,
-
-    }
-}
+class role_oradb::installdb(
+  $installdb_hash,
+  ){
+    create_resources('oradb::installdb', $installdb_hash)
+  }
