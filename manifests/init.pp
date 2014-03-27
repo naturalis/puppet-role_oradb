@@ -46,7 +46,7 @@ class role_oradb (
                                                 userBaseDir            => '/home',
                                                 group                  => 'dba',
                                                 downloadDir            => '/install',
-                                                zipExtract             => false,
+                                                zipExtract             => true,
                                                 puppetDownloadMntPoint => '/zipfiles',
                                                 remoteFile             => false,
                                               },
@@ -83,7 +83,7 @@ class role_oradb (
 
   host { $::fqdn:
     ensure       => 'present',
-    host_aliases => [$::hostname],
+    host_aliases => [$::hostname, 'localhost'],
     ip           => $::ipaddress,
     target       => '/etc/hosts',
   }
