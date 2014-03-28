@@ -24,7 +24,7 @@ Examples
 -------------
 Hiera yaml file, if you want to install multiple database installations, databases, listeners. Example for multiple listeners:
 
-'''
+```
 role_oradb::net_hash:
   listener-01:
     oracleHome: '/oracle/product/11.2/db'
@@ -38,7 +38,7 @@ role_oradb::net_hash:
     user: 'oracle'
     group: 'dba'
     downloadDir: '/install'
-'''
+```
 
 Limitations
 -------------
