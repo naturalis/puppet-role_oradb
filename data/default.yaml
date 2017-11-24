@@ -1,0 +1,45 @@
+role_oradb::installdb_hash:
+  112010_Linux-x86-64:
+    version: '11.2.0.1'
+    file: 'linux.x64_11gR2_database'
+    databaseType: 'SE' #default SE
+    oracleBase: '/oracle'
+    oracleHome: '/oracle/product/11.2/db'
+    createUser: true #default true
+    user: 'oracle' #default 'oracle'
+    userBaseDir: '/home' #default '/home'
+    group: 'dba' #default 'dba'
+    downloadDir: '/install' #default '/install'
+    zipExtract: false
+    puppetDownloadMntPoint: '/zipfiles'
+    remoteFile: false
+
+role_oradb::net_hash:
+  listener:
+    oracleHome: '/oracle/product/11.2/db'
+    version: '11.2' 
+    user: 'oracle' #default 'oracle'
+    group: 'dba' #default 'dba'
+    downloadDir: '/install' #default '/install'
+
+role_oradb::database_hash:
+  orcl:
+    oracleBase: '/oracle'
+    oracleHome: '/oracle/product/11.2/db'
+    user: 'oracle'
+    group: 'dba'
+    downloadDir: '/install'
+    action: 'create'
+    dbName: 'orcl'
+    dbDomain: 'oracle.com'
+    sysPassword: 'Welcome01'
+    systemPassword: 'Welcome01'
+    dataFileDestination: '/oracle/oradata'
+    recoveryAreaDestination: '/oracle/flash_recovery_area'
+    characterSet: 'AL32UTF8'
+    nationalCharacterSet: 'UTF8'
+    initParams: 'open_cursors=1000,processes=600,job_queue_processes=4,compatible=11.2.0.0.0'
+    sampleSchema: 'TRUE'
+    memoryPercentage: '40'
+    memoryTotal: '800'
+    databaseType: 'MULTIPURPOSE'
