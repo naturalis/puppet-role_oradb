@@ -1,6 +1,6 @@
 role_oradb::installdb_hash:
   112010_Linux-x86-64:
-    version: '11.2.0.1'
+    version: '11.2.0.4'
     file: 'linux.x64_11gR2_database'
     databaseType: 'SE' #default SE
     oracleBase: '/oracle'
