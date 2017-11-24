@@ -38,13 +38,9 @@ role_oradb::database_hash:
     recovery_area_destination: '/oracle/flash_recovery_area'
     character_set: 'AL32UTF8'
     nationalcharacter_set: 'UTF8'
-    init_params: 
-      - open_cursors=1000
-        processes=600
-        job_queue_processes=4
-        compatible=11.2.0.0.0
+    init_params: undef
     sample_schema: 'TRUE'
-    memory_percentage: '40'
-    memory_total: '800'
+    memory_percentage: 40
+    memory_total: 800
     database_type: 'MULTIPURPOSE'
     em_configuration: 'NONE'
