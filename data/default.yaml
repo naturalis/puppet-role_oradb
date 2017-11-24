@@ -38,7 +38,7 @@ role_oradb::database_hash:
     recovery_area_destination: '/oracle/flash_recovery_area'
     character_set: 'AL32UTF8'
     nationalcharacter_set: 'UTF8'
-    init_params: undef
+    #init_params:
     sample_schema: 'TRUE'
     memory_percentage: 40
     memory_total: 800
