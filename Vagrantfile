@@ -17,6 +17,6 @@ Vagrant.configure("2") do |config|
     config.vm.network "forwarded_port", id: 'ssh', guest: 22, host: 2222
 #   config.vm.provision "shell", inline: "apt-get install curl"
     config.vm.provision "shell",
-      inline: "curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/bootstrap.sh > bootstrap.sh; chmod +x bootstrap.sh;./bootstrap.sh"
+      inline: "curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/bootstrap.sh > bootstrap.sh; chmod +x bootstrap.sh;./bootstrap.sh server-oradb"
   end
 end
