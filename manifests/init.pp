@@ -41,20 +41,17 @@ class role_oradb (
   $database_hash  = undef,
 ) {
 
-  host { $::fqdn:
-    ensure       => 'present',
-    host_aliases => [$::hostname, 'localhost'],
-    ip           => $::ipaddress,
-    target       => '/etc/hosts',
+  class {"role_oradb::config":
   }
 
   class {"role_oradb::installdb":
     installdb_hash => $installdb_hash,
+    require        => Class['role_oradb::config'],
   }
 
   class {"role_oradb::net":
     net_hash => $net_hash,
-    require  => [Host[$::fqdn],Class['role_oradb::installdb']],
+    require  => Class['role_oradb::installdb'],
   }
 
   class {"role_oradb::database":
