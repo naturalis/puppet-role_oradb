@@ -1,17 +1,18 @@
 role_oradb::installdb_hash:
   11204_Linux-x86-64:
     version: '11.2.0.4'
-    file: 'linux.x64_11gR2_database'
+    file: 'p13390677_112040_Linux-x86-64'
     database_type: 'SE' #default SE
     oracle_base: '/oracle'
     oracle_home: '/oracle/product/11.2/db'
+    ee_options_selection: true
     user: 'oracle' #default 'oracle'
-    user_base_dir: '/home' #default '/home'
     group: 'dba' #default 'dba'
+    group_install: 'oinstall'
+    group_oper: 'oper'
     download_dir: '/install' #default '/install'
-    zip_extract: false
+    zip_extract: true
     puppet_download_mnt_point: '/zipfiles'
-    remote_file: false
 
 role_oradb::net_hash:
   listener:
