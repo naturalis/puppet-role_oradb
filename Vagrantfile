@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "/opt/oracle/", "/zipfiles"
     config.vm.host_name = "oradb"
     config.vm.network "forwarded_port", id: 'ssh', guest: 22, host: 2222
+    config.vm.network "forwarded_port", id: 'oracle', guest: 1521, host: 1521
 #   config.vm.provision "shell", inline: "apt-get install curl"
     config.vm.provision "shell",
       inline: "curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/bootstrap.sh > bootstrap.sh; chmod +x bootstrap.sh;./bootstrap.sh server-oradb"
