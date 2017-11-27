@@ -33,7 +33,7 @@
 #
 # === Copyright
 #
-# Copyright 2014 Your name here, unless otherwise noted.
+# Copyright 2017 Rudi Broekhuizen
 #
 class role_oradb (
   $installdb_hash = undef,
