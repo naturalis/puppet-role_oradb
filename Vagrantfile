@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     end
 
   config.vm.define "vb-01" do |config|
+    config.vm.synced_folder "/opt/oracle/", "/zipfiles"
     config.vm.host_name = "oradb"
     config.vm.network "forwarded_port", id: 'ssh', guest: 22, host: 2222
 #   config.vm.provision "shell", inline: "apt-get install curl"
