@@ -9,6 +9,9 @@ class role_oradb::config {
     target       => '/etc/hosts',
   }
   
+  $packages = [ 'unzip', 'ksh' ]
+  package { $packages: }
+  
   $all_groups = ['oinstall','dba' ,'oper']
 
   group { $all_groups :
