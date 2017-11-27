@@ -12,6 +12,11 @@ class role_oradb::config {
   $packages = [ 'unzip', 'ksh' ]
   package { $packages: }
   
+  file { '/zipfiles':
+    ensure => 'directory',
+    mode   => '0766'
+  }
+  
   $all_groups = ['oinstall','dba' ,'oper']
 
   group { $all_groups :
