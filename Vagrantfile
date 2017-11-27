@@ -12,7 +12,8 @@ Vagrant.configure("2") do |config|
       v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     end
 
-  config.vm.define "vb-01" do |config|
+  config.vm.define "oradb" do |config|
+    config.vm.synced_folder "/opt/oracle/", "/zipfiles/"
     config.vm.host_name = "oradb"
     config.vm.network "forwarded_port", id: 'ssh', guest: 22, host: 2222
     config.vm.network "forwarded_port", id: 'oracle', guest: 1521, host: 1521
