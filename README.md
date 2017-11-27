@@ -2,8 +2,9 @@ puppet-role_oradb
 ===================
 
 Puppet module to install Oracle database server
-
-For more information using this tool: 
+```bash
+scp -P 2222 p13390677_112040_Linux-x86-64_1of7.zip localhost:/tmp
+```
 
 Parameters
 -------------
