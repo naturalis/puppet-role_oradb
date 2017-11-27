@@ -46,8 +46,7 @@ Limitations
 This module has been built on and tested against Puppet 3 and higher.
 
 The module has been tested on:
-- CentOS 6.5
-- Oracle Linux 6.5
+- CentOS 7
 
 Authors
 -------------
