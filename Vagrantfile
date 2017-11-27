@@ -1,4 +1,4 @@
-box = "bento/ubuntu-16.04"
+box = "centos/7"
 
 Vagrant.configure("2") do |config|
     config.vm.box = box
