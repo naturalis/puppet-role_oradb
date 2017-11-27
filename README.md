@@ -2,10 +2,16 @@ puppet-role_oradb
 ===================
 
 Puppet module to install Oracle database server
+
+Upload installation files:
 ```bash
 scp -P 2222 p13390677_112040_Linux-x86-64_1of7.zip localhost:/zipfiles
 ```
 
+Connect using sqlcl:
+```bash
+sqlcl sys@localhost:1521:orcl as sysdba
+```
 Parameters
 -------------
 All parameters are read from defaults in init.pp and can be overwritten by hiera or The foreman.
